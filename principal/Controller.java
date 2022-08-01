@@ -3,7 +3,7 @@ package principal;
 import model.Administrador;
 import model.Usuario;
 import static principal.PrincipalPombo.*;
-import static principal.Verificacoes.*;
+
 
 public class Controller {
 
@@ -17,34 +17,14 @@ public class Controller {
         String cpf;
         String login;
 
-        do {
-            System.out.println("Digite o nome do usuario: ");
-            nome = teclado.next();
-            nome.toLowerCase();
-            if(nomeJaCadastrado(nome)){
-                System.out.println("O nome inserido ja consta em nossa base de dados. Por favor tente novamente.");
-                System.out.println();
-            }
-        } while (nomeJaCadastrado(nome));
+        System.out.println("Digite o nome do usuario: ");
+        nome = teclado.next();
 
-        do {
-            System.out.println("Digite o cpf do usuario: ");
-            cpf = teclado.next();
-            if(cpfJaCadastrado(cpf)){
-                System.out.println("O cpf inserido ja consta em nossa base de dados. Por favor tente novamente.");
-                System.out.println();
-            }
-        } while (cpfJaCadastrado(cpf));
+        System.out.println("Digite o cpf do usuario: ");
+        cpf = teclado.next();
 
-        do {
-            System.out.println("Digite o login do usuario: ");
-            login = teclado.next();
-            login.toLowerCase();
-            if(loginJaCadastrado(login)){
-                System.out.println("O login inserido ja consta em nossa base de dados. Por favor tente novamente.");
-                System.out.println();
-            }
-        } while (loginJaCadastrado(login));
+        System.out.println("Digite o login do usuario: ");
+        login = teclado.next();
 
         Usuario usuario = new Usuario(nome, cpf, login);
         return usuario;
@@ -56,34 +36,14 @@ public class Controller {
         String cpf;
         String login;
 
-        do {
-            System.out.println("Digite o nome do administrador: ");
-            nome = teclado.next();
-            nome.toLowerCase();
-            if(nomeJaCadastrado(nome)){
-                System.out.println("O nome inserido ja consta em nossa base de dados. Por favor tente novamente.");
-                System.out.println();
-            }
-        } while (nomeJaCadastrado(nome));
+        System.out.println("Digite o nome do administrador: ");
+        nome = teclado.next();
 
-        do {
-            System.out.println("Digite o cpf do administrador: ");
-            cpf = teclado.next();
-            if(cpfJaCadastrado(cpf)){
-                System.out.println("O cpf inserido ja consta em nossa base de dados. Por favor tente novamente.");
-                System.out.println();
-            }
-        } while (cpfJaCadastrado(cpf));
+        System.out.println("Digite o cpf do administrador: ");
+        cpf = teclado.next();
 
-        do {
-            System.out.println("Digite o login do administrador: ");
-            login = teclado.next();
-            login.toLowerCase();
-            if(loginJaCadastrado(login)){
-                System.out.println("O login inserido ja consta em nossa base de dados. Por favor tente novamente.");
-                System.out.println();
-            }
-        } while (loginJaCadastrado(login));
+        System.out.println("Digite o login do administrador: ");
+        login = teclado.next();
 
         Administrador administrador = new Administrador(nome, cpf, login);
         return administrador;
@@ -144,6 +104,9 @@ public class Controller {
         }
         return index;
     }
+
+
+
 
     //----------------------------------------- GETTERS AND SETTERS ------------------------------------------//
 

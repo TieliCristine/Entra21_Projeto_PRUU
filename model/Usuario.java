@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import static principal.PrincipalPombo.*;
 
@@ -34,6 +36,7 @@ public class Usuario {
         } else {
             Pruu pruu = new Pruu(texto, this.getNome());
             pruus.add(pruu);
+            todosOsPruus.add(pruu);
         }
     }
 
