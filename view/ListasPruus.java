@@ -1,5 +1,8 @@
 package view;
 
+import model.Pruu;
+import model.Usuario;
+
 import static model.Pruu.counterPruu;
 import static principal.Controller.localizaAdministrador;
 import static principal.Controller.localizaUsuario;
@@ -14,30 +17,25 @@ public class ListasPruus {
     // -------------------------------------------- METODOS ----------------------------------------------------//
 
 
-    // Essa função mostra todos os pruus existentes com informações
     public void mostraTodosPruus() {
         if ((counterPruu == 1)) {
             System.out.println("Nao foi possivel mostrarmos os Pruus! ");
             System.out.println("Ainda nao recebemos. Mande-nos um! ");
             System.out.println();
         } else {
-            for (int i = 0; i < usuarios.size(); i++) {
-                for (int c = 0; c < usuarios.get(i).getPruus().size(); c++) {
-                    System.out.println(usuarios.get(i).getPruus().get(c).toString());
-                }
+            for (int i = 0; i < todosOsPruus.size(); i++) {
+                System.out.println(todosOsPruus.get(i).toString());
             }
+        }
             System.out.println();
             System.out.println("Deseja dar um like em algum Pruu? [1 - Sim / 0 - Nao]");
             this.setOpcao(teclado.nextInt());
             if (this.getOpcao() == 1) {
                 usuarios.get(0).darLike();
             }
-        }
-
     }
 
 
-    //Essa função recebe o cpf do usuário, chama a função localizaUsuario que retorna um index. Dai pega o usuario do indice encontrado pelo cpf e retorna o to String.
     public void mostraPruusPorUsuario() {
         if (counterPruu == 1) {
             System.out.println("Nao foi possivel mostrarmos os Pruus! ");
@@ -92,7 +90,6 @@ public class ListasPruus {
     }
 
 
-    // Essa função mostra todos os Usuarios existentes com informações.
     public void mostraTodosUsuarios() {
         if(usuarios.isEmpty()){
             System.out.println("Ainda nao foi cadastrado nenhum usuario. Por favor, cadastre algum atraves do menu principal!");
@@ -104,7 +101,6 @@ public class ListasPruus {
     }
 
 
-    // Essa função mostra todos os Administradores existentes com informações.
     public void mostraTodosAdministradores() {
         if(administradores.isEmpty()){
             System.out.println("Ainda nao foi cadastrado nenhum administrador. Por favor, cadastre algum atraves do menu principal!");
@@ -116,7 +112,6 @@ public class ListasPruus {
     }
 
 
-    // Essa função mostra todos cadastrados com suas informações.
     public void mostraTodosCadastrados() {
         mostraTodosUsuarios();
         mostraTodosAdministradores();

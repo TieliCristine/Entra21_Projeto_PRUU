@@ -1,6 +1,7 @@
 package principal;
 
 import model.Administrador;
+import model.Pruu;
 import model.Usuario;
 import view.ListasPruus;
 import view.Menu;
@@ -17,6 +18,7 @@ public class PrincipalPombo {
     public static Controller controller = new Controller();
     public static ArrayList<Usuario> usuarios = new ArrayList<>();
     public static ArrayList<Administrador> administradores = new ArrayList<>();
+    public static ArrayList<Pruu> todosOsPruus = new ArrayList<>();
 
 
 
@@ -40,9 +42,6 @@ public class PrincipalPombo {
                         case 4:
                             listas.mostraPruusPorUsuario();
                             break;
-//                        case 5:
-//                            usuarios.get(0).darLike();
-//                            break;
                         case 5:
                             listas.mostraTodosUsuarios();
                             break;
@@ -61,7 +60,7 @@ public class PrincipalPombo {
                             listas.mostraTodosPruus();
                             break;
                         case 4:
-                            listas.mostraPruusPorUsuario();
+                            listas.mostraPruusPorAdministrador();
                             break;
                         case 5:
                             controller.block();
